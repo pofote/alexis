@@ -1,0 +1,3 @@
+yo_homepage:
+    pattern:  /
+    defaults: { _controller: YoBundle:Default:index }

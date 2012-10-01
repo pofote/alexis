@@ -1,0 +1,10 @@
+<!Doctype html>
+<html>
+    <head>
+    </head>
+    <body>
+        <form action="{{ path('yo_homepage') }}" method="post" {{form_enctype(formulario) }}>
+        {{form_widget(formulario) }}
+            <input class="boton" type="submit" value="inserta" />
+        </form>
+</html>
