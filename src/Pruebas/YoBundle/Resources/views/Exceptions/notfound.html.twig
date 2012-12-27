@@ -1,0 +1,11 @@
+{%extends 'YoBundle::layout.html.twig'%}
+{%block body%}
+
+<h1>404 Not Found</h1>
+
+{% image '@YoBundle/Resources/public/images/notfound.jpg' output='/img/notfound.jpg'%}
+<img src="{{ asset_url }}" alt="NOT FOUND"/>
+{%endimage%}
+
+
+{%endblock%}

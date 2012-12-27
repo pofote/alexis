@@ -1,3 +1,38 @@
+login:
+  pattern: /login
+  defaults: { _controller: YoBundle:Default:login }
+  
+login_check:
+  pattern: /country/login_check
+ 
+logout:
+  pattern: /country/logout
+
+  
+
+
+
+
 yo_homepage:
     pattern:  /
     defaults: { _controller: YoBundle:Default:index }
+pag1:
+  pattern: /pag1
+  defaults: {_controller: YoBundle:Default:pag1}
+pag2:
+  pattern: /pag2
+  defaults: {_controller: YoBundle:Default:pag2}
+  
+country:
+  pattern: /country
+  defaults: {_controller: YoBundle:Default:location}
+  
+  
+  
+not_found:
+  pattern: /not-found
+  defaults: {_controller: YoBundle:Exception:notfound}
+  
+not_pass:
+  pattern: /not-pass
+  defaults: {_controller: YoBundle:Exception:notPass}

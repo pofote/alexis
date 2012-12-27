@@ -1,0 +1,16 @@
+{%extends 'YoBundle::layout.html.twig'%}
+{%block body%}
+
+<div style="background-color: black">
+    <h1 style="color: white">¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡NO PUEDES PASAR!!!!!!!!!!!!</h1>
+
+    {% image '@YoBundle/Resources/public/images/balrog.jpg' output='/img/not_pass.jpg'%}
+            <img src="{{ asset_url }}" alt="NOT FOUND"/>
+        {%endimage%}
+
+
+</div>
+
+
+
+{%endblock%}

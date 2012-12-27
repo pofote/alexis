@@ -3,6 +3,8 @@
 namespace Pruebas\YoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * @author alexis Calatayud Doe <Alexiscalatayud@gmail.com>
@@ -11,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  */
-class Yo {
+class Yo implements UserInterface {
 
     /**
      * @ORM\Id
@@ -28,8 +30,13 @@ class Yo {
     /**
      * @ORM\Column(type="string", length=100)
      */
-    
     protected $nombre;
+    
+    
+     /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $pass;
 
     public function getId() {
         return $this->id;
@@ -54,6 +61,40 @@ class Yo {
     public function __toString() {
         return $this->getNombre();
     }
+    
+    public function getPass() {
+        return $this->pass;
+    }
+
+    public function setPass($pass) {
+        $this->pass = $pass;
+    }
+
+    public function eraseCredentials() {
+        
+    }
+
+    public function getPassword() {
+        return $this->getPass();
+        
+    }
+
+    public function getRoles() {
+        return array('ROLE_USUARIO');
+
+        
+    }
+
+    public function getSalt() {
+        
+    }
+
+    public function getUsername() {
+        return $this->getNombre();
+        
+    }
+
+
 
 }
 

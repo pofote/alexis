@@ -1,7 +1,25 @@
 parameters:
-#    yo.example.class: Pruebas\YoBundle\Example
+    apiKey: '34635af30a07645bfd47b27c396c33fd2c405b238085d0f449093294c2b76172'
+    apiUrl: 'http://api.ipinfodb.com/v3/ip-country/'
 
 services:
-#    yo.example:
-#        class: %yo.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+     iplocation:
+        class:  Pruebas\YoBundle\Service\IpLocation
+        arguments: [%apiKey%,  %apiUrl%, '@doctrine.orm.entity_manager']
+        
+     yo.listener.add:
+        class: Pruebas\YoBundle\Events\Add        
+        tags:
+          - {name: doctrine.event_listener,event: prePersist, method: peote}
+          
+     yo.notfound:
+        class: Pruebas\YoBundle\Events\Exception
+        arguments: ['@router']
+        tags:
+          - {name: kernel.event_listener, event: kernel.exception, method: exception, priority: 0}
+          
+    
+      
+
+
+

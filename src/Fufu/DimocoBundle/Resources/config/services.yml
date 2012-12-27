@@ -1,0 +1,7 @@
+parameters:
+#    dimoco.example.class: Fufu\DimocoBundle\Example
+
+services:
+#    dimoco.example:
+#        class: %dimoco.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
